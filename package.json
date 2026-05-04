@@ -1,0 +1,73 @@
+{
+	"name": "example",
+	"private": false,
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"dev": "nuxi dev",
+		"start": "nuxi preview",
+		"build": "nuxi generate",
+		"web:prepare": "nuxi prepare",
+		"lint": "eslint src",
+		"lint:ts": "nuxt prepare && vue-tsc -b --noEmit",
+		"release": "changelogen --release",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"@nuxt/icon": "2.2.1",
+		"@sidebase/nuxt-auth": "1.2.0",
+		"@vueuse/core": "^14.2.1",
+		"nuance-ui": "^0.2.11",
+		"nuxt": "^4.3.1",
+		"vue": "^3.5.28",
+		"vue-router": "^5.0.3"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^8.2.0",
+		"@eslint/js": "^10.0.1",
+		"@floating-ui/vue": "^1.1.10",
+		"@formkit/tempo": "^1.0.0",
+		"@iconify-json/gravity-ui": "^1.2.11",
+		"@lukemorales/query-key-factory": "^1.3.4",
+		"@nuxt/eslint": "1.15.1",
+		"@nuxtjs/stylelint-module": "^5.2.1",
+		"@pinia/nuxt": "^0.11.3",
+		"@tanstack/vue-query": "^5.96.1",
+		"@tanstack/vue-query-devtools": "^5.91.0",
+		"@tanstack/vue-table": "^8.21.3",
+		"@tauri-apps/cli": "^2.10.0",
+		"@vee-validate/nuxt": "^4.15.1",
+		"@vee-validate/zod": "^4.15.1",
+		"@vueuse/nuxt": "14.2.1",
+		"changelogen": "^0.6.2",
+		"es-toolkit": "^1.45.1",
+		"eslint": "^10.0.1",
+		"eslint-import-resolver-typescript": "^4.4.4",
+		"eslint-plugin-boundaries": "^5.4.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.7",
+		"nuxt-i18n-micro": "^3.12.0",
+		"pinia": "^3.0.4",
+		"postcss": "^8.5.6",
+		"postcss-preset-mantine": "^1.18.0",
+		"postcss-simple-vars": "^7.0.1",
+		"stylelint": "^17.3.0",
+		"stylelint-config-clean-order": "^8.0.1",
+		"stylelint-config-recommended-vue": "^1.6.1",
+		"stylelint-config-standard": "^40.0.0",
+		"stylelint-order": "^8.1.1",
+		"tsc-files": "^1.1.4",
+		"typescript": "^6.0.2",
+		"vue-tsc": "^3.2.5",
+		"zod": "^4.3.6"
+	},
+	"lint-staged": {
+		"*.{ts,vue}": [
+			"eslint --fix",
+			"tsc-files --noEmit --skipLibCheck --pretty"
+		],
+		"*.css": [
+			"stylelint --fix"
+		]
+	}
+}
