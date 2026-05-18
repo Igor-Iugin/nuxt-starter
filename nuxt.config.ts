@@ -1,8 +1,8 @@
-import crypto from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 import { defineNuxtConfig } from 'nuxt/config'
+import readableClassnames from 'vite-plugin-readable-classnames'
 
-import { auth, authRuntime } from './config/auth'
+import { auth } from './config/auth'
 import { icon } from './config/icon'
 
 
@@ -59,11 +59,7 @@ export default defineNuxtConfig({
 	// fix for error: https://github.com/nuxt/nuxt/issues/34957
 	experimental: { viteEnvironmentApi: true },
 	vite: {
-		define: {
-			__API__: JSON.stringify(process.env.NODE_ENV === 'development'
-				? 'http://localhost:3001/api/v1'
-				: '/api/v1'),
-		},
+		plugins: [readableClassnames()],
 		optimizeDeps: {
 			include: [
 				'@tanstack/vue-query',
@@ -79,23 +75,5 @@ export default defineNuxtConfig({
 				'es-toolkit',
 			],
 		},
-		css: {
-			modules: {
-				generateScopedName: (name, filename, css) => {
-					const hash = crypto.createHash('md5').update(css).digest('hex').substring(0, 5)
-					const componentName = filename.split('/').pop()?.split('.')[0] ?? ''
-					const parsedName = componentName.split('-').map(i => `${i[0]?.toUpperCase()}${i.slice(1)}`).join('')
-
-					return `${parsedName}__${name}_${hash}`
-				},
-			},
-		},
-	},
-
-	$development: {
-		auth: authRuntime.$development,
-	},
-	$production: {
-		auth: authRuntime.$production,
 	},
 })

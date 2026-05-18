@@ -58,6 +58,7 @@
 		"stylelint-order": "^8.1.1",
 		"tsc-files": "^1.1.4",
 		"typescript": "^6.0.2",
+		"vite-plugin-readable-classnames": "^1.5.9",
 		"vue-tsc": "^3.2.5",
 		"zod": "^4.3.6"
 	},

@@ -1,7 +1,8 @@
 import type { UseQueryOptions } from '@tanstack/vue-query'
-import type { AsyncData, KeysOf, PickFrom } from '#app/composables/asyncData'
 import type { UseFetchOptions } from 'nuxt/app'
 import type { FetchError } from 'ofetch'
+
+import type { AsyncData, KeysOf, PickFrom } from '#app/composables/asyncData'
 
 
 export interface ApiError {
@@ -17,9 +18,8 @@ export interface ApiResponse<T extends object> {
 	total: number
 }
 
-declare const __API__: string
 export const $api = $fetch.create({
-	baseURL: __API__,
+	baseURL: import.meta.env.VITE_API_BASE,
 	credentials: 'include',
 	onResponseError({ response }) {
 		if (response.status === 401)
