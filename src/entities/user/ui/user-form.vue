@@ -57,7 +57,7 @@ const submit = handleSubmit(async data => {
 			emit('submit', await create(data))
 	}
 	catch (error) {
-		console.error(`${capitalize(mode)} user errror: ${error}`)
+		console.error(`${capitalize(mode)} user error: ${error}`)
 	}
 })
 </script>
