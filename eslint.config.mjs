@@ -64,6 +64,12 @@ export default antfu({
 	},
 	vue: {
 		overrides: {
+			// vue-eslint-parser bug: imports from <script setup> are not hoisted when a sibling
+			// <script> block is present, causing import/first to fire on valid dual-block SFCs.
+			// perfectionist/sort-imports already enforces import order in .vue files.
+			// https://github.com/vuejs/vue-eslint-parser/issues/255
+			'import/first': 'off',
+
 			'vue/html-quotes': ['error', 'single', { avoidEscape: true }],
 			'vue/component-name-in-template-casing': ['error', 'PascalCase'],
 			'vue/max-attributes-per-line': ['error', {
