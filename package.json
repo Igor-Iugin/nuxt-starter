@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "nuxi dev",
 		"start": "nuxi preview",
-		"build": "nuxi generate",
+		"build": "nuxi generate --dotenv .env.production",
 		"web:prepare": "nuxi prepare",
 		"lint": "eslint src",
 		"lint:ts": "nuxt prepare && vue-tsc -b --noEmit",
