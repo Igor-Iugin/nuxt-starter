@@ -15,24 +15,44 @@ export default antfu({
 				SwitchCase: 1,
 				VariableDeclarator: 'first',
 			}],
-			'no-template-curly-in-string': 'off',
+
 			'node/prefer-global/process': 'off',
 			'no-console': ['warn'],
+			'no-template-curly-in-string': 'off',
 
 			'import/newline-after-import': ['error', { count: 2 }],
 			'perfectionist/sort-imports': [
 				'error',
 				{
 					newlinesBetween: 1,
-					tsconfig: { rootDir: '.' },
+					order: 'asc',
+					type: 'natural',
+					customGroups: [
+						{ groupName: 'fsd-widgets-type', modifiers: ['type'], elementNamePattern: '^@widgets(/.*)?$' },
+						{ groupName: 'fsd-features-type', modifiers: ['type'], elementNamePattern: '^@features(/.*)?$' },
+						{ groupName: 'fsd-entities-type', modifiers: ['type'], elementNamePattern: '^@entities(/.*)?$' },
+						{ groupName: 'fsd-shared-type', modifiers: ['type'], elementNamePattern: '^@shared(/.*)?$' },
+						{ groupName: 'fsd-widgets', elementNamePattern: '^@widgets(/.*)?$' },
+						{ groupName: 'fsd-features', elementNamePattern: '^@features(/.*)?$' },
+						{ groupName: 'fsd-entities', elementNamePattern: '^@entities(/.*)?$' },
+						{ groupName: 'fsd-shared', elementNamePattern: '^@shared(/.*)?$' },
+					],
 					groups: [
-						'type-import',
-						['value-builtin', 'value-external'],
+						'type',
+						'builtin',
+						'external',
+						'fsd-widgets-type',
+						'fsd-features-type',
+						'fsd-entities-type',
+						'fsd-shared-type',
+						'fsd-widgets',
+						'fsd-features',
+						'fsd-entities',
+						'fsd-shared',
 						'type-internal',
-						'value-internal',
+						'internal',
 						['type-parent', 'type-sibling', 'type-index'],
-						['value-parent', 'value-sibling', 'value-index'],
-						'ts-equals-import',
+						['parent', 'sibling', 'index'],
 						'unknown',
 					],
 				},
@@ -64,12 +84,6 @@ export default antfu({
 	},
 	vue: {
 		overrides: {
-			// vue-eslint-parser bug: imports from <script setup> are not hoisted when a sibling
-			// <script> block is present, causing import/first to fire on valid dual-block SFCs.
-			// perfectionist/sort-imports already enforces import order in .vue files.
-			// https://github.com/vuejs/vue-eslint-parser/issues/255
-			'import/first': 'off',
-
 			'vue/html-quotes': ['error', 'single', { avoidEscape: true }],
 			'vue/component-name-in-template-casing': ['error', 'PascalCase'],
 			'vue/max-attributes-per-line': ['error', {
