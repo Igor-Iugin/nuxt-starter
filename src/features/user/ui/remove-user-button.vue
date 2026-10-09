@@ -1,8 +1,9 @@
 <script lang='ts' setup>
+import { openConfirmModal } from 'nuance-ui/modals'
+
 import type { UserEntity } from '@entities/user'
 
 import { useRemoveUser } from '@entities/user'
-import { openConfirmModal } from 'nuance-ui/modals'
 
 
 const { user } = defineProps<{ user: UserEntity }>()
@@ -21,7 +22,8 @@ function handleRemove() {
 </script>
 
 <template>
-	<NActionIcon
+	<NButton
+		square
 		icon='gravity-ui:trash-bin'
 		color='red'
 		variant='subtle'

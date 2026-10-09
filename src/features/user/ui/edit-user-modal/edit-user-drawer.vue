@@ -1,10 +1,13 @@
 <script lang='ts' setup generic='Mode extends FormMode = "edit"'>
-import type { UserFormProps } from '@entities/user'
-import type { FormMode } from '@shared/types'
 import type { DrawerRootProps } from 'nuance-ui/components'
 
-import { UserForm } from '@entities/user'
 import { useModal } from 'nuance-ui/modals'
+
+import type { UserFormProps } from '@entities/user'
+
+import type { FormMode } from '@shared/types'
+
+import { UserForm } from '@entities/user'
 
 
 export interface UserModalProps extends UserFormProps {

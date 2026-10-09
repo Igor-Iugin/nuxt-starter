@@ -2,7 +2,7 @@ import { antfu } from '@antfu/eslint-config'
 
 // Run `npx @eslint/config-inspector` to inspect the resolved config interactively
 export default antfu({
-	ignores: ['**/*.json'],
+	ignores: ['**/*.json', '**/*.md'],
 	stylistic: {
 		indent: 'tab',
 		overrides: {

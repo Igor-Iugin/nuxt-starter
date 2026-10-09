@@ -1,8 +1,7 @@
+import type { AsyncData, KeysOf, PickFrom } from '#app/composables/asyncData'
 import type { UseQueryOptions } from '@tanstack/vue-query'
 import type { UseFetchOptions } from 'nuxt/app'
 import type { FetchError } from 'ofetch'
-
-import type { AsyncData, KeysOf, PickFrom } from '#app/composables/asyncData'
 
 
 export interface ApiError {

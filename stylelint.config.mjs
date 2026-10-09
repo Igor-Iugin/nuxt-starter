@@ -1,19 +1,17 @@
 import { propertyGroups } from 'stylelint-config-clean-order'
 
 
-const propertiesOrder = propertyGroups.map(properties => ({
-	noEmptyLineBetween: false,
-	emptyLineBefore: 'always', // Don't add empty lines between order groups.
-	properties,
-}))
-
 export default {
 	customSyntax: 'postcss-html',
 	extends: ['stylelint-config-recommended-vue', 'stylelint-config-clean-order'],
 	rules: {
 		'order/properties-order': [
 			[
-				...propertiesOrder,
+				...propertyGroups.map(properties => ({
+					noEmptyLineBetween: false,
+					emptyLineBefore: 'always', // Don't add empty lines between order groups.
+					properties,
+				})),
 				{
 					noEmptyLineBetween: false,
 					emptyLineBefore: 'always',

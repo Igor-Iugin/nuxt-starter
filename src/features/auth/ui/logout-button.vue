@@ -1,18 +1,20 @@
 <script lang='ts' setup>
-import type { ActionIconProps } from '@nui/components'
+import type { ButtonProps } from '@nui/components'
 
 
 const {
 	icon = 'gravity-ui:arrow-right-from-square',
+	square = true,
 	...props
-} = defineProps<ActionIconProps>()
+} = defineProps<ButtonProps>()
 
 const { signOut } = useAuth()
 const route = useRoute()
 </script>
 
 <template>
-	<NActionIcon
+	<NButton
+		:square
 		:icon
 		v-bind='props'
 		@click='signOut({

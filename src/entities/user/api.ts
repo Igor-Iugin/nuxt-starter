@@ -1,11 +1,12 @@
+import type { UserEntity } from './model'
+
+import { createQueryKeys } from '@lukemorales/query-key-factory'
+import { infiniteQueryOptions, queryOptions, useMutation, useQueryClient } from '@tanstack/vue-query'
+
 import type { ApiResponse } from '@shared/api'
 import type { PartialExcept } from '@shared/types'
 
-import { createQueryKeys } from '@lukemorales/query-key-factory'
 import { $api } from '@shared/api'
-import { infiniteQueryOptions, queryOptions, useMutation, useQueryClient } from '@tanstack/vue-query'
-
-import type { UserEntity } from './model'
 
 
 interface ListParams {

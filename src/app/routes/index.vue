@@ -5,8 +5,7 @@ useHead({
 </script>
 
 <template>
-	<div :class='$style.root'>
-	</div>
+	<div :class='$style.root' />
 </template>
 
 <style module>

@@ -30,4 +30,5 @@ tsconfig.tsbuildinfo
 # AI
 CLAUDE.md
 .claude
-docs/superpowers
+.agents
+.scratch

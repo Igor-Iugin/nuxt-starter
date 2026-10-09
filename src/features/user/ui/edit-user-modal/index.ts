@@ -1,8 +1,8 @@
-import type { UserEntity } from '@entities/user'
+import type { UserModalProps } from './edit-user-drawer.vue'
 
 import { $modals } from 'nuance-ui/modals'
 
-import type { UserModalProps } from './edit-user-drawer.vue'
+import type { UserEntity } from '@entities/user'
 
 import EditUserDrawer from './edit-user-drawer.vue'
 

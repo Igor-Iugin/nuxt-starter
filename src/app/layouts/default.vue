@@ -1,13 +1,14 @@
 <script lang='ts' setup>
-import { userQueries } from '@entities/user'
-import { LogoutButton, UserMenu } from '@features/auth'
-import { openUserModal } from '@features/user'
 import { NModalsProvider } from '@nui/modals'
 import { useQuery } from '@tanstack/vue-query'
 import { noop } from '@vueuse/core'
 
+import { LogoutButton, UserMenu } from '@features/auth'
+import { openUserModal } from '@features/user'
 
-const theme = useTheme()
+import { userQueries } from '@entities/user'
+
+
 const { data } = useQuery(userQueries.me)
 </script>
 
@@ -27,9 +28,7 @@ const { data } = useQuery(userQueries.me)
 			</NTitle>
 
 			<div :class='$style.actions'>
-				<NActionIcon @click='theme.preference = theme.value === "light" ? "dark" : "light"'>
-					<Icon :name='theme.value === "light" ? "gravity-ui:moon" : "gravity-ui:sun"' />
-				</NActionIcon>
+				<NThemeToggle variant='subtle' />
 				<NButtonGroup :class='$style.logout'>
 					<UserMenu @click='openUserModal({ user: data! }).catch(noop)' />
 					<LogoutButton size='30px' />

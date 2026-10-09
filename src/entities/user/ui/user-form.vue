@@ -1,9 +1,9 @@
 <script lang='ts' setup generic='Mode extends FormMode = "edit"'>
-import type { FormMode } from '@shared/types'
+import type { CreateUserForm, UserEntity } from '../model'
 
 import { capitalize } from 'es-toolkit'
 
-import type { CreateUserForm, UserEntity } from '../model'
+import type { FormMode } from '@shared/types'
 
 import { useCreateUser, useUpdateUser } from '../api'
 import { createUserSchema, editUserSchema } from '../model'
