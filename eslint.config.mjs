@@ -18,6 +18,14 @@ export default antfu({
 
 			'node/prefer-global/process': 'off',
 			'no-console': ['warn'],
+			'no-restricted-imports': ['error', {
+				patterns: [{
+					// Свои модули пропускаем: иначе правило ругается на каждый `export *`
+					regex: '^(?!es-toolkit$|[.~#]|@(app|pages|widgets|features|entities|shared)(/|$))',
+					importNames: ['noop'],
+					message: 'Импортируйте noop из es-toolkit',
+				}],
+			}],
 			'no-template-curly-in-string': 'off',
 
 			'import/newline-after-import': ['error', { count: 2 }],
