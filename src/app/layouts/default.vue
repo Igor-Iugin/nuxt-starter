@@ -1,7 +1,7 @@
 <script lang='ts' setup>
 import { NModalsProvider } from '@nui/modals'
 import { useQuery } from '@tanstack/vue-query'
-import { noop } from '@vueuse/core'
+import { noop } from 'es-toolkit'
 
 import { LogoutButton, UserMenu } from '@features/auth'
 import { openUserModal } from '@features/user'
