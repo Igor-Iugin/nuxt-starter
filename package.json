@@ -28,7 +28,6 @@
 		"@sidebase/nuxt-auth": "^1.4.0",
 		"@tanstack/vue-query": "^5.104.1",
 		"@vee-validate/nuxt": "^4.15.1",
-		"@vee-validate/zod": "^4.15.1",
 		"@vueuse/nuxt": "15.0.0",
 		"changelogen": "^0.6.2",
 		"es-toolkit": "^1.52.0",
@@ -43,7 +42,9 @@
 		"stylelint-config-recommended-vue": "^2.0.0",
 		"stylelint-order": "^8.1.1",
 		"tsc-files": "^1.1.4",
+		"type-fest": "^6.0.1",
 		"typescript": "^6",
+		"vee-validate": "^4.15.1",
 		"vite-plugin-readable-classnames": "^1.5.13",
 		"vue-tsc": "^3.3.12",
 		"zod": "^4"
